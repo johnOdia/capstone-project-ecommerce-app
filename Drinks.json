@@ -1,0 +1,68 @@
+{
+  "items": [
+    {
+      "sys": { "id": "9" },
+      "fields": {
+        "title": "Fayrouz Drink",
+        "price": 500,
+        "image": { "fields": { "file": { "url": "./images/product-9.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "10" },
+      "fields": {
+        "title": "Maltina",
+        "price": 300,
+        "image": { "fields": { "file": { "url": "./images/product-10.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "11" },
+      "fields": {
+        "title": "Coca-Cola",
+        "price": 300,
+        "image": { "fields": { "file": { "url": "./images/product-11.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "12" },
+      "fields": {
+        "title": "Juice",
+        "price": 1000,
+        "image": { "fields": { "file": { "url": "./images/product-12.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "13" },
+      "fields": {
+        "title": "Guinness Lager Beer",
+        "price": 399.99,
+        "image": { "fields": { "file": { "url": "./images/product-13.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "14" },
+      "fields": {
+        "title": "Gordons Spark",
+        "price": 350,
+        "image": { "fields": { "file": { "url": "./images/product-14.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "15" },
+      "fields": {
+        "title": "Heineken",
+        "price": 399.99,
+        "image": { "fields": { "file": { "url": "./images/product-15.png" } } }
+      }
+    },
+    {
+      "sys": { "id": "16" },
+      "fields": {
+        "title": "Star Lager Beer",
+        "price": 400,
+        "image": { "fields": { "file": { "url": "./images/product-16.jpg" } } }
+      }
+    }
+  ]
+}

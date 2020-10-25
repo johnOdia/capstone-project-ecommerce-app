@@ -1,0 +1,68 @@
+{
+  "items": [
+    {
+      "sys": { "id": "25" },
+      "fields": {
+        "title": "Chicken Pepper Soup",
+        "price": 899.99,
+        "image": { "fields": { "file": { "url": "./images/product-25.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "26" },
+      "fields": {
+        "title": "Assorted Pepper Soup",
+        "price": 1200,
+        "image": { "fields": { "file": { "url": "./images/product-26.jpeg" } } }
+      }
+    },
+    {
+      "sys": { "id": "27" },
+      "fields": {
+        "title": "Pepper Stew",
+        "price": 300,
+        "image": { "fields": { "file": { "url": "./images/product-27.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "28" },
+      "fields": {
+        "title": "Catfish Pepper Soup",
+        "price": 800,
+        "image": { "fields": { "file": { "url": "./images/product-28.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "29" },
+      "fields": {
+        "title": "Garden Egg Sauce",
+        "price": 400,
+        "image": { "fields": { "file": { "url": "./images/product-29.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "30" },
+      "fields": {
+        "title": "Egusi Soup",
+        "price": 400,
+        "image": { "fields": { "file": { "url": "./images/product-30.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "31" },
+      "fields": {
+        "title": "Ogbono Soup",
+        "price": 500,
+        "image": { "fields": { "file": { "url": "./images/product-31.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "32" },
+      "fields": {
+        "title": "Banga Soup",
+        "price": 300,
+        "image": { "fields": { "file": { "url": "./images/product-32.jpg" } } }
+      }
+    }
+  ]
+}

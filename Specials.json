@@ -1,0 +1,36 @@
+{
+  "items": [
+    {
+      "sys": { "id": "43" },
+      "fields": {
+        "title": "Salad",
+        "price": 300,
+        "image": { "fields": { "file": { "url": "./images/product-43.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "44" },
+      "fields": {
+        "title": "Chicken Peperoni",
+        "price": 3500,
+        "image": { "fields": { "file": { "url": "./images/product-44.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "45" },
+      "fields": {
+        "title": "Pizza",
+        "price": 2000,
+        "image": { "fields": { "file": { "url": "./images/product-45.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "46" },
+      "fields": {
+        "title": "Ofada Rice",
+        "price": 1000,
+        "image": { "fields": { "file": { "url": "./images/product-46.png" } } }
+      }
+    }
+  ]
+}

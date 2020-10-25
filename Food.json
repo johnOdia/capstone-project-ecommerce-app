@@ -1,0 +1,68 @@
+{
+  "items": [
+    {
+      "sys": { "id": "17" },
+      "fields": {
+        "title": "Fried Rice",
+        "price": 800,
+        "image": { "fields": { "file": { "url": "./images/product-17.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "18" },
+      "fields": {
+        "title": "Boiled Rice",
+        "price": 500,
+        "image": { "fields": { "file": { "url": "./images/product-18.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "19" },
+      "fields": {
+        "title": "Jollof Rice",
+        "price": 600,
+        "image": { "fields": { "file": { "url": "./images/product-19.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "20" },
+      "fields": {
+        "title": "Fried Plantain",
+        "price": 300,
+        "image": { "fields": { "file": { "url": "./images/product-20.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "21" },
+      "fields": {
+        "title": "Boiled Yam",
+        "price": 300,
+        "image": { "fields": { "file": { "url": "./images/product-21.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "22" },
+      "fields": {
+        "title": "Spaghetti",
+        "price": 400,
+        "image": { "fields": { "file": { "url": "./images/product-22.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "23" },
+      "fields": {
+        "title": "Macaronni",
+        "price": 400,
+        "image": { "fields": { "file": { "url": "./images/product-23.jpeg" } } }
+      }
+    },
+    {
+      "sys": { "id": "24" },
+      "fields": {
+        "title": "Beans",
+        "price": 400,
+        "image": { "fields": { "file": { "url": "./images/product-24.jpg" } } }
+      }
+    }
+  ]
+}

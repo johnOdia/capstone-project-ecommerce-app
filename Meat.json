@@ -1,0 +1,68 @@
+{
+  "items": [
+    {
+      "sys": { "id": "35" },
+      "fields": {
+        "title": "Spiced Fish",
+        "price": 500.99,
+        "image": { "fields": { "file": { "url": "./images/product-35.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "36" },
+      "fields": {
+        "title": "Fried Fish",
+        "price": 500,
+        "image": { "fields": { "file": { "url": "./images/product-36.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "37" },
+      "fields": {
+        "title": "Boiled Beef",
+        "price": 450,
+        "image": { "fields": { "file": { "url": "./images/product-37.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "38" },
+      "fields": {
+        "title": "Full Turkey",
+        "price": 15000,
+        "image": { "fields": { "file": { "url": "./images/product-38.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "39" },
+      "fields": {
+        "title": "Roasted Pork",
+        "price": 2500,
+        "image": { "fields": { "file": { "url": "./images/product-39.jpeg" } } }
+      }
+    },
+    {
+      "sys": { "id": "40" },
+      "fields": {
+        "title": "Beef Suya",
+        "price": 500,
+        "image": { "fields": { "file": { "url": "./images/product-40.jpeg" } } }
+      }
+    },
+    {
+      "sys": { "id": "41" },
+      "fields": {
+        "title": "Chicken Suya",
+        "price": 800,
+        "image": { "fields": { "file": { "url": "./images/product-41.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "42" },
+      "fields": {
+        "title": "Boiled Eggs",
+        "price": 200,
+        "image": { "fields": { "file": { "url": "./images/product-42.jpg" } } }
+      }
+    }
+  ]
+}
