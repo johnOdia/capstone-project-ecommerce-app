@@ -362,4 +362,24 @@ body {
      left: 0;
      right: 0;
    }
+   .heading{
+     font-size: 1rem;
+   }
+   .address{
+     font-size: .8rem;
+   }
+}
+@media screen and (max-width: 400px){
+  .navbar-center{
+    padding: 0;
+  }
+  .red{
+    font-size: .7rem;
+    padding: 0px;
+  } 
+}
+@media screen and (max-width: 311px){
+  .heading{
+    font-size: .8rem;
+  }
 }

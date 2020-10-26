@@ -50,15 +50,14 @@ function initClient() {
     }).then(() => {
         gapi.client.load('oauth2', 'v2', function () {
             gapi.client.oauth2.userinfo.get().execute(function (resp) {
-              // Shows user email
-              console.log(resp.given_name)
+              // Shows user email first name
               signedInUsername = resp.given_name
             })
           });
     }).then( () => {
         setTimeout(() => {
             welcomeText.innerText = `
-            Dear ${signedInUsername} on behalf of all staff we welcome you to Mama Ebo pepper rice online shop! we offer a variety of mouth watering dishes for your consumption, just scroll to the products section add a product to your cart, view your cart by clicking on the cart icon on the top-right corner, close and click order now. It's that easy!`
+            Dear ${signedInUsername ? signedInUsername : Mr/Mrs} on behalf of all staff we welcome you to Mama Ebo pepper rice online shop! we offer a variety of mouth watering dishes for your consumption, just scroll to the products section add a product to your cart, view your cart by clicking on the cart icon on the top-right corner, close and click order now. It's that easy!`
 
             welcomeBtn.addEventListener('click',() => welcomeContainer.style.display = 'none')
             
@@ -121,7 +120,7 @@ class Products {
     async getProducts(product) {
         console.log(product)
         try {
-            let result = await fetch(`${product}.json`)
+            let result = await fetch(`./products/${product}.json`)
             let data = await result.json()
             let products = data.items
             products = products.map(item => {
@@ -306,8 +305,11 @@ class UI {
     }
     makeFinalOrder(){
         bannerBtn.addEventListener('click',() => {
-            alert(`Your order has been placed successfully! You ordered ${overallItemsTotal} item(s) with a cost of ₦${finalItemsCost}. Visit us again ${signedInUsername}!`)
+            if(!overallItemsTotal) alert('You haven\'t selected any items!' )
+            else {
+                alert(`Your order has been placed successfully! You ordered ${overallItemsTotal} item(s) with a cost of ₦${finalItemsCost}. Visit us again ${signedInUsername}!`)
             this.clearCart()
+            }
         })
     }
     numberWithCommas(x) {
