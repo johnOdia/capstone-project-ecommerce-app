@@ -60,12 +60,10 @@ function initClient() {
             welcomeText.innerText = `
             Dear ${signedInUsername} on behalf of all staff we welcome you to Mama Ebo pepper rice online shop! we offer a variety of mouth watering dishes for your consumption, just scroll to the products section add a product to your cart, view your cart by clicking on the cart icon on the top-right corner, close and click order now. It's that easy!`
 
-            welcomeContainer.style.display = ''
-
             welcomeBtn.addEventListener('click',() => welcomeContainer.style.display = 'none')
             
         },3000)
-    })
+    }).catch(error => alert(error))
 }
 
 function updateSignInStatus(isSignedIn) {

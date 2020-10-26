@@ -348,8 +348,18 @@ body {
   position: fixed;
   min-width: 50%;
   min-height: 50%;
+  /* top: 50%; */
+  left: 25%;
+  right: 50%;
   z-index: 3;
+  margin: auto;
 }
 .welcome-text{
   font-size: 1rem;
+}
+@media screen and (max-width: 600px){
+   .welcome-container{
+     left: 0;
+     right: 0;
+   }
 }
