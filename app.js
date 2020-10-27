@@ -57,7 +57,7 @@ function initClient() {
     }).then( () => {
         setTimeout(() => {
             welcomeText.innerText = `
-            Dear ${signedInUsername ? signedInUsername : Mr/Mrs} on behalf of all staff we welcome you to Mama Ebo pepper rice online shop! we offer a variety of mouth watering dishes for your consumption, just scroll to the products section add a product to your cart, view your cart by clicking on the cart icon on the top-right corner, close and click order now. It's that easy!`
+            Dear ${signedInUsername ? signedInUsername : 'Mr/Mrs'} on behalf of all staff we welcome you to Mama Ebo pepper rice online shop! we offer a variety of mouth watering dishes for your consumption, just scroll to the products section add a product to your cart, view your cart by clicking on the cart icon on the top-right corner, close and click order now. It's that easy!`
 
             welcomeBtn.addEventListener('click',() => welcomeContainer.style.display = 'none')
             
