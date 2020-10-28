@@ -31,7 +31,6 @@ const container = document.querySelector('.container')
 //load auth2 library
 function handleClientLoad() {
     gapi.load('client:auth2', initClient)
-    console.log(gapi)
 }
 
 //init API client library 
@@ -58,11 +57,9 @@ function initClient() {
         setTimeout(() => {
             welcomeText.innerText = `
             Dear ${signedInUsername ? signedInUsername : 'Mr/Mrs'} on behalf of all staff we welcome you to Mama Ebo pepper rice online shop! we offer a variety of mouth watering dishes for your consumption, just scroll to the products section add a product to your cart, view your cart by clicking on the cart icon on the top-right corner, close and click order now. It's that easy!`
-
-            welcomeBtn.addEventListener('click',() => welcomeContainer.style.display = 'none')
             
         },3000)
-    }).catch(error => alert(error))
+    }).catch(error => console.log(error))
 }
 
 function updateSignInStatus(isSignedIn) {
@@ -118,7 +115,6 @@ class Products {
 
     }
     async getProducts(product) {
-        console.log(product)
         try {
             let result = await fetch(`./products/${product}.json`)
             let data = await result.json()
@@ -182,7 +178,7 @@ class UI {
                     //display cart items
                     this.addCartItem(cartItem)
                     //show the cart
-                    // this.showCart()
+                    this.showCart()
                 }
             })
         })
@@ -338,10 +334,13 @@ class Storage {
 document.addEventListener('DOMContentLoaded', () => {
     const ui = new UI()
     const products = new Products()
-    // const authenticate = new Authentication()
+
     // setup app
     ui.setupApp()
     products.addListener()
+
+    welcomeBtn.addEventListener('click',() => welcomeContainer.style.display = 'none')
+    welcomeContainer.style.display = 'block'
 
     // get default product to display
     products.getProducts('snacks').then(products => {
@@ -352,6 +351,4 @@ document.addEventListener('DOMContentLoaded', () => {
         ui.cartLogic()
     })
 
-    // //display other products
-    // authenticate.handleClientLoad()
 })
