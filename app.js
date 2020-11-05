@@ -178,7 +178,7 @@ class UI {
                     //display cart items
                     this.addCartItem(cartItem)
                     //show the cart
-                    this.showCart()
+                    // this.showCart()
                 }
             })
         })
