@@ -195,8 +195,6 @@ class UI {
         cartItems.innerText = itemsTotal
         overallItemsTotal = itemsTotal
         finalItemsCost = tempTotal
-        console.log(overallItemsTotal)
-        console.log(tempTotal)
     }
     addCartItem(item) {
         const div = document.createElement('div')
@@ -281,7 +279,6 @@ class UI {
         this.hideCart()
     }
     removeItem(id) {
-        console.log(cart)
         cart = cart.filter(item => item.id !== id)
         this.setCartValues(cart)
         Storage.saveCart(cart)
@@ -303,7 +300,7 @@ class UI {
         bannerBtn.addEventListener('click',() => {
             if(!overallItemsTotal) alert('You haven\'t selected any items!' )
             else {
-                alert(`Your order has been placed successfully! You ordered ${overallItemsTotal} item(s) with a cost of ₦${finalItemsCost}. Visit us again ${signedInUsername}!`)
+                alert(`Your order has been placed successfully! You ordered ${overallItemsTotal} item(s) with a cost of ₦${finalItemsCost}. Place more orders!`)
             this.clearCart()
             }
         })
