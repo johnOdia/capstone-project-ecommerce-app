@@ -65,7 +65,7 @@ function initClient() {
 }
 
 function updateSignInStatus(isSignedIn) {
-    if (!isSignedIn) {
+    if (isSignedIn) {
         content.style.display = 'block'
         signoutButton.style.display = 'block'
         signIn.style.display = 'none'
