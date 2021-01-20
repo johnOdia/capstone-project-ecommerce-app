@@ -12,6 +12,8 @@ const foodSection = document.querySelector('.foods')
 const signIn = document.querySelector('.sign-in')
 const bars = document.querySelector('.fa-bars')
 const bannerBtn = document.querySelector('.banner-btn')
+const allfoods = document.querySelectorAll('h3')
+const productLoader = document.querySelector('.product-loader')
 
 //welcome message
 const welcomeContainer = document.querySelector('.welcome-container')
@@ -101,6 +103,12 @@ class Products {
         let product
         foodSection.addEventListener('click', event => {
             if (event.target.parentElement.getAttribute('data-food') === 'food') {
+                const defaultStyle = {color:'gray','text-decoration': 'none'}
+                allfoods.forEach(food => Object.assign(food.style, defaultStyle))
+
+                const style = { color:'#e78a32', 'text-decoration': 'underline', 'font-weight': 'bolder'}
+                Object.assign(event.target.style, style)
+                
                 product = event.target.innerText
             }
             let ui = new UI()
@@ -151,10 +159,19 @@ class UI {
         </article>
            `
         })
-        productsDOM.innerHTML = result
+
+        productLoader.style.display = 'grid'
+        productsDOM.innerHTML = ''
+
+          setTimeout(() => {
+            productLoader.style.display = 'none'
+            productsDOM.innerHTML = result
+            this.getBagButtons()
+        }, 3000)
     }
-    getBagButtons() {
+    getBagButtons() { 
         const buttons = [...document.querySelectorAll('.bag-btn')]
+        
         buttonsDOM = buttons
         buttons.forEach(button => {
             let id = button.dataset.id
@@ -163,7 +180,7 @@ class UI {
                 button.innerText = 'In Cart'
                 button.disabled = true
             }
-            button.addEventListener('click', event => {
+            button.addEventListener('click', event => {                
                 event.target.innerText = 'In Cart'
                 if (event.target.disabled === undefined || event.target.disabled === false) {
                     event.target.disabled = true
@@ -183,7 +200,8 @@ class UI {
             })
         })
     }
-    setCartValues(cart) {
+    setCartValues() {
+        const cart = Storage.getCart()
         let tempTotal = 0
         let itemsTotal = 0
         cart.map(item => {
@@ -238,6 +256,7 @@ class UI {
         clearCartBtn.addEventListener('click', () => this.clearCart())
         //cart functionality
         cartContent.addEventListener('click', event => {
+            let presentCart = Storage.getCart()
             if (event.target.classList.contains('remove-item')) {
                 let removeItem = event.target
                 let id = removeItem.dataset.id
@@ -246,14 +265,16 @@ class UI {
             }
             else if (event.target.classList.contains('fa-chevron-up')) {
                 let addAmount = event.target
-                let id = addAmount.dataset.id
-                let tempItem = cart.find(item => item.id === id)
+                let id = addAmount.dataset.id                
+                
+                let tempItem = presentCart.find(item => item.id === id)
+                
                 tempItem.amount = tempItem.amount + 1
-                Storage.saveCart(cart)
-                this.setCartValues(cart)
+                Storage.saveCart(presentCart)
+                this.setCartValues()
                 addAmount.nextElementSibling.innerText = tempItem.amount
             }
-            else if (event.target.classList.contains('fa-chevron-down')) {
+            else if (event.target.classList.contains('fa-chevron-down')) {                
                 let lowerAmount = event.target
                 let id = lowerAmount.dataset.id
                 let tempItem = cart.find(item => item.id === id)
@@ -343,9 +364,6 @@ document.addEventListener('DOMContentLoaded', () => {
     products.getProducts('snacks').then(products => {
         ui.displayProducts(products)
         Storage.saveProducts(products)
-    }).then(() => {
-        ui.getBagButtons()
-        ui.cartLogic()
     })
 
 })
