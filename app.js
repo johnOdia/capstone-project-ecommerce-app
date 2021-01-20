@@ -364,6 +364,9 @@ document.addEventListener('DOMContentLoaded', () => {
     products.getProducts('snacks').then(products => {
         ui.displayProducts(products)
         Storage.saveProducts(products)
+    }).then(() => {
+        ui.getBagButtons()
+        ui.cartLogic()
     })
 
 })
