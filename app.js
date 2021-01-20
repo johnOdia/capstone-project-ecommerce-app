@@ -65,7 +65,7 @@ function initClient() {
 }
 
 function updateSignInStatus(isSignedIn) {
-    if (isSignedIn) {
+    if (!isSignedIn) {
         content.style.display = 'block'
         signoutButton.style.display = 'block'
         signIn.style.display = 'none'
@@ -169,7 +169,7 @@ class UI {
             this.getBagButtons()
         }, 3000)
     }
-    getBagButtons() { 
+    getBagButtons() {        
         const buttons = [...document.querySelectorAll('.bag-btn')]
         
         buttonsDOM = buttons
@@ -200,8 +200,7 @@ class UI {
             })
         })
     }
-    setCartValues() {
-        const cart = Storage.getCart()
+    setCartValues(cart) {
         let tempTotal = 0
         let itemsTotal = 0
         cart.map(item => {
@@ -256,7 +255,6 @@ class UI {
         clearCartBtn.addEventListener('click', () => this.clearCart())
         //cart functionality
         cartContent.addEventListener('click', event => {
-            let presentCart = Storage.getCart()
             if (event.target.classList.contains('remove-item')) {
                 let removeItem = event.target
                 let id = removeItem.dataset.id
@@ -265,16 +263,14 @@ class UI {
             }
             else if (event.target.classList.contains('fa-chevron-up')) {
                 let addAmount = event.target
-                let id = addAmount.dataset.id                
-                
-                let tempItem = presentCart.find(item => item.id === id)
-                
+                let id = addAmount.dataset.id
+                let tempItem = cart.find(item => item.id === id)
                 tempItem.amount = tempItem.amount + 1
-                Storage.saveCart(presentCart)
-                this.setCartValues()
+                Storage.saveCart(cart)
+                this.setCartValues(cart)
                 addAmount.nextElementSibling.innerText = tempItem.amount
             }
-            else if (event.target.classList.contains('fa-chevron-down')) {                
+            else if (event.target.classList.contains('fa-chevron-down')) {
                 let lowerAmount = event.target
                 let id = lowerAmount.dataset.id
                 let tempItem = cart.find(item => item.id === id)
